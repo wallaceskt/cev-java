@@ -1,4 +1,4 @@
-package aula02e03;
+package aula020304;
 
 public class Caneta {
 	
@@ -58,13 +58,13 @@ public class Caneta {
 		
 	}
 	
-	public boolean getTampada() {
+	public boolean isTampada() {
 		
 		return this.tampada;
 		
 	}
 	
-	public void setTampada(boolean tampada) {
+	public void isTampada(boolean tampada) {
 		
 		this.tampada = tampada;
 	
@@ -73,6 +73,7 @@ public class Caneta {
 	// Método construtor
 	public Caneta(String modelo, String cor, float ponta) {
 		
+		this.isTampada(true);
 		this.modelo = modelo;
 		this.cor = cor;
 		this.ponta = ponta;
@@ -84,7 +85,7 @@ public class Caneta {
 		
 		String retorno = "";
 		
-		if((this.getTampada()) || (this.getCarga() == 0)) {
+		if((this.isTampada()) || (this.getCarga() == 0)) {
 			
 			retorno = "[ERRO] A caneta " + this.getModelo() + " está tampada e/ou sem carga!";
 			
@@ -102,13 +103,13 @@ public class Caneta {
 		
 		String retorno = "";
 		
-		if(this.getTampada()) {
+		if(this.isTampada()) {
 			
 			retorno = "A caneta já está tampada.";
 			
 		} else {
 
-			this.setTampada(true);
+			this.isTampada(true);
 			retorno = "A caneta está tampada.";
 			
 		}
@@ -121,9 +122,9 @@ public class Caneta {
 		
 		String retorno = "";
 		
-		if(this.getTampada()) {
+		if(this.isTampada()) {
 			
-			this.setTampada(false);
+			this.isTampada(false);
 			retorno = "A caneta está destampada.";
 			
 		} else {
@@ -146,7 +147,7 @@ public class Caneta {
 		status += "Ponta: " + this.getPonta() + "\r\n";
 		status += "Carga: " + this.getCarga() + "\r\n";
 		status += "Tampada: ";
-		status += (this.getTampada()) ? "Sim" : "Não";
+		status += (this.isTampada()) ? "Sim" : "Não";
 		status += "\r\n";
 		status += "========== ****** ==========\r\n";
 		

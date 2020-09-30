@@ -46,6 +46,53 @@ Classe Caneta
     protegido carga: Inteiro
     protegido tampada: Logico
 
+    publico Metodo getModelo()
+        retorne modelo
+    FimMetodo
+
+    publico Metodo setModelo(m: Caractere)
+        modelo = m
+    FimMetodo
+
+    publico Metodo getCor()
+        retorne cor
+    FimMetodo
+
+    publico Metodo setCor(c: Caractere)
+        cor = c
+    FimMetodo
+
+    publico Metodo getPonta()
+        retorne ponta
+    FimMetodo
+
+    publico Metodo setPonta(p: Real)
+        modelo = p
+    FimMetodo
+
+    publico Metodo getCarga()
+        retorne carga
+    FimMetodo
+
+    publico Metodo setCarga(c: Inteiro)
+        modelo = c
+    FimMetodo
+
+    publico Metodo getTampada()
+        retorne tampada
+    FimMetodo
+
+    publico Metodo setTampada(t: Logico)
+        modelo = t
+    FimMetodo
+
+    Metodos construtor(m: Caractere, c: Caractere, p: Real)
+        setModelo(m)
+        setCor(c)
+        setPonta(p)
+        tampar()
+    FimMetodo
+
     publico Metodo rabiscar()
         Se (tampada) entao
             Escreva("Erro")
@@ -53,11 +100,11 @@ Classe Caneta
             Escreva("Rabisco")
     FimMetodo
 
-    publico Metodo tampar()
+    protegido Metodo tampar()
         tampada = verdadeiro
     FimMetodo
 
-    publico Metodo destampar()
+    protegido Metodo destampar()
         tampada = falso
     FimMetodo
 
@@ -75,16 +122,28 @@ FimClasse
 
 Ex: 
 ```
-c1 = nova Caneta
+c1 = nova Caneta("Compactor Economic", "Azul", 0.5)
 c1.cor = "Azul"
 c1.ponta = 0.5
 c1.tampada = falso
 c1.rabiscar()
+Escreva(c1.getModelo())
 ```
 
 ### Modificadores de visibilidade
 Indicam o nível de acesso aos componentes internos de uma classe. São três modificadores (segundo a nomeclatura da UML):
 
-- **+** (publico).
-- **-** (privado).
-- **#** (protegido).
+- **Publico (+):** a classe atual e todas as outras classes podem ter acesso.
+- **Privado (-):** somente a classe atual vai ter acesso.
+- **Protegido (#):** a classe atual e todas as suas sub-classes podem ter acesso.
+
+## Métodos especiais
+
+### Métodos acessores (getters)
+Métodos que dão acesso a uma determinada informação de caráter restrita. É uma segurança adicional.
+
+### Métodos modificadores (mutantes/setters)
+São métodos mais abstratos que os métodos getters. Eles modificam coisas que estão dentro do objeto. Costuma ter um parâmetro para funcionar, mas não é uma regra.
+
+### Método Construtor (construct)
+O construtor é unicamente invocado no momento da criação do objeto através do operador new. Não possui valor de retorno. O retorno do operador new é uma referência para o objeto recém-criado.
