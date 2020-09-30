@@ -1,5 +1,5 @@
 # cev-php-oo
-Orientação a Objetos com PHP (Curso em Vídeo).
+Estudo de Java (Curso em Vídeo).
 
 ## O que é OO?
 - **Objetivo:** aproximar o mundo digital do mundo real.
