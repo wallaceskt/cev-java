@@ -1,4 +1,4 @@
-package aula02;
+package aula02e03;
 
 public class Aula02 {
 
@@ -8,7 +8,7 @@ public class Aula02 {
 //		c1.setModelo("Compactor");
 //		c1.setCor("Azul");
 //		c1.setPonta(0.5f);
-		c1.setCarga(100);
+		c1.setCarga(10);
 		c1.setTampada(true);
 		
 		System.out.println("Caneta: " + c1.getModelo());
@@ -18,6 +18,7 @@ public class Aula02 {
 		System.out.println("Tampada: " + c1.getTampada());
 		
 		System.out.println(c1.destampar());
+		//System.out.println(c1.tampar());
 		System.out.println(c1.rabiscar());
 		
 		System.out.println(c1.status());

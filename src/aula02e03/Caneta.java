@@ -1,4 +1,4 @@
-package aula02;
+package aula02e03;
 
 public class Caneta {
 	
@@ -84,7 +84,7 @@ public class Caneta {
 		
 		String retorno = "";
 		
-		if((this.getTampada()) && (this.getCarga() == 0)) {
+		if((this.getTampada()) || (this.getCarga() == 0)) {
 			
 			retorno = "[ERRO] A caneta " + this.getModelo() + " está tampada e/ou sem carga!";
 			
@@ -98,7 +98,7 @@ public class Caneta {
 		
 	}
 	
-	public String tampar() {
+	protected String tampar() {
 		
 		String retorno = "";
 		
@@ -117,7 +117,7 @@ public class Caneta {
 		
 	}
 	
-	public String destampar() {
+	protected String destampar() {
 		
 		String retorno = "";
 		
