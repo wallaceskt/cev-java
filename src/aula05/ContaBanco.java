@@ -1,5 +1,8 @@
 package aula05;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class ContaBanco {
 	// Atributos
 	public int numConta;
@@ -70,7 +73,7 @@ public class ContaBanco {
 			int t = (this.getTipo() == "cc") ? 50 : 150;
 			this.setSaldo(t);
 			
-			retorno = "A conta está aberta. Seu saldo é de R$ " + this.getSaldo() + ".";
+			retorno = "A conta está aberta. Seu saldo é de " + formatarMoeda(this.getSaldo()) + ".";
 		} else {
 			retorno = "A conta já está aberta.";
 		}
@@ -107,8 +110,8 @@ public class ContaBanco {
 		
 		if (this.isStatus()) {
 			this.setSaldo(this.getSaldo() + valor);
-			retorno = "Depósito no valor de R$ " + this.getSaldo() + " foi efetuado com sucesso.\r\n";
-			retorno = retorno + "Saldo atual: R$ " + this.getSaldo() + ".";
+			retorno = "Depósito no valor de " + formatarMoeda(this.getSaldo()) + " foi efetuado com sucesso.\r\n";
+			retorno = retorno + "Saldo atual: " + formatarMoeda(this.getSaldo()) + ".";
 		} else {
 			retorno = "[ERRO] Impossível depositar! A conta está fechada.";
 		}
@@ -124,10 +127,10 @@ public class ContaBanco {
 		if (this.isStatus()) {
 			if (this.getSaldo() >= valor) {
 				this.setSaldo(this.getSaldo() - valor);
-				retorno = "Saque no valor de R$ " + valor + " efetuado com sucesso.\r\n";
-				retorno = retorno + "Saldo atual: R$ " + this.getSaldo() + ".";
+				retorno = "Saque no valor de " + formatarMoeda(valor) + " efetuado com sucesso.\r\n";
+				retorno = retorno + "Saldo atual: " + formatarMoeda(this.getSaldo()) + ".";
 			} else {
-				retorno = "[ERRO] O valor de R$ " + valor + " é maior que seu saldo!";
+				retorno = "[ERRO] O valor de " + formatarMoeda(valor) + " é maior que seu saldo!";
 			}
 		} else {
 			retorno = "[ERRO] Impossível sacar! A conta está fechada.";
@@ -149,12 +152,21 @@ public class ContaBanco {
 				v = 20;
 			}
 			this.setSaldo(this.getSaldo() - v);
-			retorno = "Mensalidade paga no valor de R$ " + v + ".";
+			retorno = "Mensalidade paga no valor de " + formatarMoeda(v) + ".";
 		} else {
 			retorno = "[ERRO] Impossível sacar! A conta está fechada.";
 		}
 		
 		return retorno;
+	}
+	
+	protected String formatarMoeda(float valor) {
+	
+		Locale localeBR = new Locale( "pt", "BR" );  
+		NumberFormat dinheiroBR = NumberFormat.getCurrencyInstance(localeBR);  
+		
+		return dinheiroBR.format(valor);
+	
 	}
 
 	public String estado() {
@@ -165,7 +177,7 @@ public class ContaBanco {
 		status += "Conta: " + this.getNumConta() + "\r\n";
 		status += "Tipo: " + this.getTipo() + "\r\n";
 		status += "Titular: " + this.getDono() + "\r\n";
-		status += "Saldo: " + this.getSaldo() + "\r\n";
+		status += "Saldo: " + formatarMoeda(this.getSaldo()) + "\r\n";
 		status += "Status: ";
 		status += (this.isStatus()) ? "aberta" : "fechada";
 		status += "\r\n";
