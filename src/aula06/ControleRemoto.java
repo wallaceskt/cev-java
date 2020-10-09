@@ -8,27 +8,27 @@ public class ControleRemoto implements Controlador {
 	private boolean tocando;
 	
 	// Métodos especiais de acesso
-	public int getVolume() {
+	private int getVolume() {
 		return volume;
 	}
 
-	public void setVolume(int volume) {
+	private void setVolume(int volume) {
 		this.volume = volume;
 	}
 
-	public boolean getLigado() {
+	private boolean getLigado() {
 		return ligado;
 	}
 
-	public void setLigado(boolean ligado) {
+	private void setLigado(boolean ligado) {
 		this.ligado = ligado;
 	}
 
-	public boolean getTocando() {
+	private boolean getTocando() {
 		return tocando;
 	}
 
-	public void setTocando(boolean tocando) {
+	private void setTocando(boolean tocando) {
 		this.tocando = tocando;
 	}
 	
@@ -110,7 +110,7 @@ public class ControleRemoto implements Controlador {
 				this.setVolume(this.getVolume() + 10);
 				retorno = "Volume: " + this.getVolume();
 				String vol = " ";
-				for (int i = 0; i < this.getVolume(); i++) {
+				for (int i = 0; i < this.getVolume(); i+=10) {
 					vol = vol + "|";
 				}
 				retorno = retorno + vol; 
@@ -133,7 +133,7 @@ public class ControleRemoto implements Controlador {
 				this.setVolume(this.getVolume() - 10);
 				retorno = "Volume: " + this.getVolume();
 				String vol = " ";
-				for (int i = 0; i < this.getVolume(); i++) {
+				for (int i = 0; i < this.getVolume(); i+=10) {
 					vol = vol + "|";
 				}
 				retorno = retorno + vol; 
@@ -174,7 +174,7 @@ public class ControleRemoto implements Controlador {
 				this.setVolume(50);
 				retorno = "Volume: " + this.getVolume();
 				String vol = " ";
-				for (int i = 0; i < this.getVolume(); i++) {
+				for (int i = 0; i < this.getVolume(); i+=10) {
 					vol = vol + "|";
 				}
 				retorno = retorno + vol;
