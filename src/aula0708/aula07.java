@@ -1,4 +1,4 @@
-package aula07;
+package aula0708;
 
 public class aula07 {
 
@@ -18,11 +18,14 @@ public class aula07 {
 		
 		l[5] = new Lutador("Nerdaard", "EUA", 30, 1.81, 105.7, 12, 2, 4);
 
-		System.out.println(l[0].apresentar());
-		System.out.println(l[2].status());
-		System.out.println(l[3].getCategoria());
-		System.out.println(l[1].ganharLuta());
-		System.out.println(l[0].empatarLuta());
+//		System.out.println(l[0].apresentar());
+//		System.out.println(l[2].status());
+//		System.out.println(l[3].getCategoria());
+//		l[1].ganharLuta();
+//		l[0].empatarLuta();
+		Luta UEC01 = new Luta();
+		UEC01.marcarLuta(l[(int) (Math.random() * 6)], l[(int) (Math.random() * 6)]);
+		UEC01.lutar();
 
 	}
 

@@ -1,4 +1,4 @@
-package aula07;
+package aula0708;
 
 public class Lutador {
 	// Atributos
@@ -110,7 +110,7 @@ public class Lutador {
 	}
 
 	// Outros métodos
-	public String apresentar() {
+	public void apresentar() {
 		String retorno = "";
 		
 		retorno = "========== APRESENTAÇÃO ==========\r\n";
@@ -121,37 +121,37 @@ public class Lutador {
 		retorno = retorno + this.getVitorias() + " vitória(s).\r\n";
 		retorno = retorno + this.getDerrotas() + " derrota(s).\r\n";
 		retorno = retorno + this.getEmpates() + " empate(s).\r\n";
-		retorno = retorno + "========== ========== ===========";
+		retorno = retorno + "========== ========== ===========\r\n";
 		
-		return retorno;
+		System.out.println(retorno);
 	}
 	
-	public String status() {
+	public void status() {
 		String retorno = "";
 		
-		retorno = "========== LUTADOR ==========\r\n";
+		//retorno = "========== LUTADOR ==========\r\n";
 		retorno = retorno + this.getNome() + " é um peso " + this.getCategoria() + ".\r\n";
 		retorno = retorno + "Ganhou " + this.getVitorias() + " vez(es).\r\n";
 		retorno = retorno + "Perdeu " + this.getDerrotas() + " vez(es).\r\n";
 		retorno = retorno + "Empatou " + this.getEmpates() + " vez(es).\r\n";
-		retorno = retorno + "========== ======= ==========";
+		//retorno = retorno + "========== ========== ===========\r\n";
 		
-		return retorno;
+		System.out.println(retorno);
 	}
 	
-	public String ganharLuta() {
+	public void ganharLuta() {
 		this.setVitorias(this.getVitorias() + 1);
-		return "Vitória!";
+		//return "Vitória!";
 	}
 
-	public String perderLuta() {
+	public void perderLuta() {
 		this.setDerrotas(this.getDerrotas() + 1);
-		return "Derrota!";
+		//return "Derrota!";
 	}
 
-	public String empatarLuta() {
+	public void empatarLuta() {
 		this.setEmpates(this.getEmpates() + 1);
-		return "Empate!";
+		//return "Empate!";
 	}
     
 }
