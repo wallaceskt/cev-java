@@ -13,6 +13,7 @@ public class Aula09 {
 		
 		l1.detalhes();
 		l2.detalhes();
+		l3.detalhes();
 
 	}
 
