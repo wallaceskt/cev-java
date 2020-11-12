@@ -382,7 +382,7 @@ FimMetodo
 #### Tipos de polimorfismo
 Os dois principais tipos de polimorfismo são:
 
-- **Sobreposição:** Um dos polimorfismos mais utilizados. Acontece quando substituímos um método de uma superclasse na sua subclasse, usando a mesma assinatura.
+- **Sobreposição:** Um dos polimorfismos mais utilizados. Acontece quando substituímos um método de uma superclasse na sua subclasse (ou seja, em classes diferentes), usando a mesma assinatura.
 
-- **Sobrecarga:** É um pouco menos comum. 
+- **Sobrecarga:** É um pouco menos comum. Acontece quando métodos de mesmo nome possuem assinaturas diferentes e estão na mesma classe. Ocorre um sobrecarregamento de um método. 
 
